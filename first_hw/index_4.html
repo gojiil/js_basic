@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Необязательное задание.
+
+Необходимо от пользователя получить число.
+Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.
+
+Пример:
+Пользователь ввел число 163. Программа должна вывести:
+"В числе 163 количество сотен: 1, десятков: 6, единиц: 3"
+
+Пример 2:
+Пользователь ввел число 74. Программа должна вывести:
+"В числе 74 количество сотен: 0, десятков: 7, единиц: 4"
+
+Пример 3:
+Пользователь ввел число 9537. Программа должна вывести:
+"В числе 9537 количество сотен: 5, десятков: 3, единиц: 7"
+
+Уточнение: пользователь всегда вводит корректное положительное целое число.
+-->
+<script>
+  "use strict";
+  let a = +prompt("Введите число:");
+  let ticker = 0;
+  let units = 0;
+  let tens = 0;
+  let hundreds = 0;
+  let thousands = 0;
+  let tensOfThousands = 0;
+  let hundredsOfThousands = 0;
+  alert(`Вы ввели число ${a}`)
+  while (a > 0) {
+    if (ticker == 0) {
+      units = a % 10;
+    } else if (ticker == 1) {
+      tens = a % 10;
+    } else if (ticker == 2) {
+      hundreds = a % 10;
+    } else if (ticker == 3) {
+      thousands = a % 10;
+    } else if (ticker == 4) {
+      tensOfThousands = a % 10;
+    } else if (ticker == 5) {
+      hundredsOfThousands = a % 10;
+    }
+    ticker ++;
+    a = Number.parseInt(a / 10);
+  }
+  alert(`В введенном числе ${hundredsOfThousands} сотен тысяч`);
+  alert(`В введенном числе ${tensOfThousands} десятков тысяч`);
+  alert(`В введенном числе ${thousands} тысяч`);
+  alert(`В введенном числе ${hundreds} сотен`);
+  alert(`В введенном числе ${tens} десятков`);
+  alert(`В введенном числе ${units} единиц`);
+</script>
+</body>
+</html>
